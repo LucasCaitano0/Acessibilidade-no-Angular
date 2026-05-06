@@ -1,0 +1,42 @@
+<section class="container">
+  <form class="busca">
+    <label for="campoBusca">Que livro você procura?</label>
+    <div class="input-wrapper">
+      <input
+        type="search"
+        id="campoBusca"
+        [formControl]="campoBusca"        >
+        <img class="lupa" src="assets/imagens/icone-busca.png" alt="Lupa roxa">
+    </div>
+  </form>
+  <p>Busque por assunto, autoria, nome...</p>
+  @if (mensagemErro) {
+    <section
+      class="resultados mensagem-erro">
+        {{ mensagemErro }}
+    </section>
+  }
+  @if (livrosEncontrados$ | async; as listaLivros) {
+    <section
+      class="resultados">
+        {{ livrosResultado.totalItems }} resultados encontrados
+    </section>
+    <ul
+      class="container-card">
+      @for (livro of listaLivros; track livro.title) {
+        <li>
+          <app-livro [livro]="livro"></app-livro>
+        </li>
+      }
+    </ul>
+  } @else {
+    <section
+      class="imagens">
+      <h1 class="titulo">Busque o livro <br> que quiser na <br> nossa estante!</h1>
+      <img
+        class="ilustracao"
+        src="assets/imagens/ilustracao-estante.png"
+        alt="Ilustração de uma pessoa em pé ao lado de uma estante com livros e plantas">
+    </section>
+  }
+</section>

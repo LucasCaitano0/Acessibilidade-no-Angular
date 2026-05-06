@@ -1,0 +1,143 @@
+<div class="container">
+  <section class="cabecalho-contato">
+    <div class="cabecalho-contato-texto">
+      <h2>Entre em Contato</h2>
+      <p>Alguma dúvida, crítica ou sugestão? <br>Entre em contato!</p>
+    </div>
+    <figure>
+      <img src="assets/imagens/contato.png" alt="">
+    </figure>
+  </section>
+
+  <form [formGroup]="contatoForm" (ngSubmit)="onSubmit()" class="formulario">
+    <fieldset>
+      <div class="campo-form">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          id="nome"
+          placeholder="Digite seu nome completo"
+          formControlName="nome"
+          required>
+        @if (contatoForm.get('nome')?.errors?.['required']) {
+          <span
+            id="nome-erro"
+            class="erro-mensagem">Nome obrigatório
+          </span>
+        }
+      </div>
+
+      <div class="campo-form">
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Digite seu email"
+          formControlName="email"
+          required>
+          @if (contatoForm.get('email')?.errors?.['email']) {
+            <span
+              id="email-erro-email"
+              class="erro-mensagem">Formato de e-mail inválido
+            </span>
+          }
+          @if (contatoForm.get('email')?.errors?.['required']) {
+            <span
+              id="email-erro-required"
+              class="erro-mensagem">E-mail obrigatório
+            </span>
+          }
+      </div>
+
+      <div class="campo-form">
+        <label for="telefone">Telefone</label>
+        <input
+          type="tel"
+          id="telefone"
+          placeholder="(XX) XXXX-XXXX"
+          formControlName="telefone">
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="campo-form">
+        <label for="motivoContato">Qual o motivo do contato?</label>
+        <select
+          id="motivoContato"
+          formControlName="motivoContato">
+          <option value="" disabled selected>Selecione a melhor opção</option>
+          <option value="suporte">Suporte</option>
+          <option value="sugestoes">Sugestões</option>
+          <option value="feedback">Feedback</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label for="melhorFormaContato">Qual a melhor forma de retorno do seu contato?</label>
+      <div
+        class="campo-form">
+        <ul class="radio-button">
+          <li>
+            <label for="email">
+              <input
+                type="radio"
+                id="email-contato"
+                formControlName="melhorFormaContato"
+                value="email">E-mail
+            </label>
+          </li>
+          <li>
+            <label for="telefone">
+              <input
+                type="radio"
+                id="telefone-contato"
+                formControlName="melhorFormaContato"
+                value="telefone">Ligação
+            </label>
+          </li>
+          <li>
+            <label for="whatsapp">
+              <input
+                type="radio"
+                id="whatsapp"
+                formControlName="melhorFormaContato"
+                value="whatsapp">Whatsapp
+            </label>
+          </li>
+        </ul>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="campo-form">
+        <label for="mensagem">Mensagem</label>
+        <textarea
+          id="mensagem"
+          placeholder="Digite sua mensagem"
+          formControlName="mensagem"
+          required></textarea>
+        @if (contatoForm.get('mensagem')?.errors?.['required']) {
+          <span
+            id="mensagem-erro"
+            class="erro-mensagem">Mensagem obrigatória
+          </span>
+        }
+      </div>
+    </fieldset>
+
+    <div class="contato-botoes">
+      <button
+        type="button"
+        class="botao-cancelar"
+        (click)="cancelar()">Cancelar
+      </button>
+      <button
+        type="submit"
+        [disabled]="contatoForm.invalid"
+        class="botao-enviar">Enviar
+      </button>
+    </div>
+  </form>
+</div>
+

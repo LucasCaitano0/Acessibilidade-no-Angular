@@ -1,0 +1,74 @@
+.sobre-cabecalho {
+  display: flex;
+  max-width: 75%;
+  margin: 60px auto;
+  background: #EFF2F1;
+  padding: 32px;
+  gap: 24px;
+
+  align-items: center;
+}
+
+.sobre-cabecalho h2 {
+  color: #050C42;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.sobre-cabecalho p {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #8B8B8B;
+}
+
+.sobre-download {
+  display: flex;
+  margin: 60px 25%;
+}
+
+.sobre-download figure {
+  text-align: center;
+}
+
+.sobre-download figcaption {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #8B8B8B;
+  padding-right: 24px;
+}
+
+.sobre-tecnologias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px 0;
+  gap: 24px;
+}
+
+.icones-tecnologias {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.sobre-tecnologias h3 {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #050C42;
+}

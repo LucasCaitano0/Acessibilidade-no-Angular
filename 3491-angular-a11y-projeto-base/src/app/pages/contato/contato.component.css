@@ -1,0 +1,176 @@
+.container {
+  max-width: 792px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.cabecalho-contato {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0 24px 0;
+}
+
+.cabecalho-contato-texto {
+  margin-top: 24px;
+}
+
+.cabecalho-contato-texto p {
+  font-size: 18px;
+  color: #8B8B8B;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.formulario {
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #EFF2F1;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.campo-form {
+  margin-bottom: 20px;
+}
+
+.campo-form div label {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.campo-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.campo-form input[type="text"],
+.campo-form input[type="email"],
+.campo-form input[type="tel"],
+.campo-form select,
+.campo-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #6C63FF;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+ .radio-button {
+  list-style-type: none;
+  display: flex;
+  gap: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #8B8B8B;
+}
+
+.radio-button input[type="radio"] {
+  margin-right: 8px;
+}
+
+textarea:focus, input:focus, select:focus{
+  outline: none;
+}
+
+select option:disabled {
+  color: #5D586C;
+  cursor: not-allowed;
+}
+
+input::placeholder, textarea::placeholder{
+  font-size: 16px;
+  font-family: Poppins;
+  padding-left: 8px;
+}
+
+.campo-form select {
+  font-size: 18px;
+  font-family: Poppins;
+  padding-left: 8px;
+  width: 300px;
+}
+
+.campo-form textarea {
+  height: 150px;
+}
+
+.campo-form div {
+  margin-top: 10px;
+}
+
+.campo-form[_ngcontent-ng-c284876600] div[_ngcontent-ng-c284876600] {
+  margin-top: 0;
+}
+
+.formulario button {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.formulario .botao-cancelar {
+  color: #6C63FF;
+  border: 2px solid #6C63FF;
+}
+
+.formulario .botao-enviar {
+  background: #6C63FF;
+  color: white;
+}
+
+.formulario button:hover {
+  background: #050C42;
+  transition: all 0.5s ease-in;
+}
+
+.radio-button {
+  text-align: left;
+}
+
+.contato-botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.erro-mensagem {
+  font-size: 14px;
+  color: red;
+}
+
+.campo-form input[type="text"]:required:invalid,
+.campo-form input[type="email"]:required:invalid,
+.campo-form input[type="tel"]:required:invalid,
+.campo-form select:required:invalid,
+.campo-form textarea:required:invalid {
+  border: 1px solid red;
+}
+
+.contato-botoes .botao-enviar:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+
+
