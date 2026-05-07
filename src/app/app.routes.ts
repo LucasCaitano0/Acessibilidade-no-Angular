@@ -12,11 +12,15 @@ export const routes: Routes = [
   },
   {
     path: 'sobre',
-    component: SobreComponent
+    component: SobreComponent,
+    title: 'Mais informações - Buscante'
+
   },
   {
     path: 'contato',
-    component: ContatoComponent
+    component: ContatoComponent,
+    title: 'Entre em contato - Buscante'
+
   },
   {
     path: '',
