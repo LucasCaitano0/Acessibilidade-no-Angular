@@ -24,3 +24,10 @@ header a {
   height: 60px;
 }
 
+header .active-page{
+  background-color: #6C63FF;
+}
+
+header .active-page.logo{
+  background-color: #F5F5F5;
+}
