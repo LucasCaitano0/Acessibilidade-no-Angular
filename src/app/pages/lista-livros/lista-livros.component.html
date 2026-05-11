@@ -13,12 +13,15 @@
   <p>Busque por assunto, autoria, nome...</p>
   @if (mensagemErro) {
     <section
+      role="alert"
+      aria-label="Mensagem de erro"
       class="resultados mensagem-erro">
         {{ mensagemErro }}
     </section>
   }
   @if (livrosEncontrados$ | async; as listaLivros) {
     <section
+      aria-label="Resultados da busca"
       class="resultados">
         {{ livrosResultado.totalItems }} resultados encontrados
     </section>

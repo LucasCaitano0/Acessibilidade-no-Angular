@@ -37,26 +37,26 @@ export class ListaLivrosComponent implements AfterViewInit{
   }
 
   livrosEncontrados$ = this.campoBusca.valueChanges.pipe(
-    debounceTime(PAUSA),
-    filter((valorDigitado) => valorDigitado.length >= 3),
-    distinctUntilChanged(),
-    switchMap((valorDigitado) => {
-      if (valorDigitado.trim() === '') {
-        return EMPTY;
-      } else {
-        return this.service.buscar(valorDigitado);
-      }
-    }),
-    tap((resultado) => {
-      this.livrosResultado = resultado;
-    }),
-    map((resultado) => resultado.items ?? []),
-    map((items) => this.livrosResultadoParaLivros(items)),
-    catchError(() => {
-      this.mensagemErro = 'Ops, ocorreu um erro. Recarregue a aplicação!';
-      return throwError(() => new Error(this.mensagemErro));
-    })
-  );
+  debounceTime(PAUSA),
+  filter((valorDigitado) => valorDigitado.length >= 3),
+  distinctUntilChanged(),
+  switchMap((valorDigitado) => {
+    if (valorDigitado.trim() === '') {
+      return EMPTY;
+    }
+    return this.service.buscar(valorDigitado).pipe(
+      catchError(() => {
+        this.mensagemErro = 'Ops, ocorreu um erro. Recarregue a aplicação!';
+        return EMPTY; // encerra só essa requisição, o Observable principal continua vivo
+      })
+    );
+  }),
+  tap((resultado) => {
+    this.livrosResultado = resultado;
+  }),
+  map((resultado) => resultado.items ?? []),
+  map((items) => this.livrosResultadoParaLivros(items))
+);
 
   livrosResultadoParaLivros(items: Item[]): LivroVolumeInfo[] {
     return items.map(item => {
