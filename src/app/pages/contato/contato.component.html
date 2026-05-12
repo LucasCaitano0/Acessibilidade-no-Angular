@@ -14,6 +14,7 @@
       <div class="campo-form">
         <label for="nome">Nome</label>
         <input
+          role="alert"
           type="text"
           id="nome"
           placeholder="Digite seu nome completo"
@@ -57,6 +58,20 @@
           placeholder="(XX) XXXX-XXXX"
           formControlName="telefone">
       </div>
+
+      <div class="campo-form">
+        <label for="cpfCnpj">CPF/CNPJ</label>
+        <input 
+          type="text"
+          formControlName="cpfCnpj"
+          placeholder="CPF ou CNPJ"
+          (input)="formatarCpfCnpj($event)"
+          maxlength="18"
+        >
+        @if (contatoForm.get('cpfCnpj')?.touched && contatoForm.get('cpfCnpj')?.errors?.['cpfCnpjInvalido']) {
+          <span class="erro-mensagem">CPF ou CNPJ inválido</span>
+        }
+      </div>
     </fieldset>
 
     <fieldset>
@@ -76,6 +91,7 @@
     <fieldset>
       <label for="melhorFormaContato">Qual a melhor forma de retorno do seu contato?</label>
       <div
+        role="radiogroup"
         class="campo-form">
         <ul class="radio-button">
           <li>
