@@ -5,13 +5,14 @@ import {
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {A11yModule} from '@angular/cdk/a11y';
 
 import { Livro } from '../../models/interfaces';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, A11yModule],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })

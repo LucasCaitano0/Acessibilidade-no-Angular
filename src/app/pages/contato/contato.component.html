@@ -33,6 +33,7 @@
       <div class="campo-form">
         <label for="email">E-mail</label>
         <input
+          aria-label="Endereço de email"
           aria-describedby="email-erro-email email-erro-required"
           [attr.aria-invalid]="contatoForm.get('email')?.invalid"
           type="email"
@@ -156,7 +157,7 @@
       </button>
       <button
         type="submit"
-        [disabled]="contatoForm.invalid"
+        [attr.aria-disabled]="contatoForm.invalid"
         class="botao-enviar">Enviar
       </button>
     </div>
