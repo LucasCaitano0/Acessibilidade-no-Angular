@@ -24,6 +24,7 @@ export class LivroComponent {
 
   onModalChange(evento: boolean) {
     this.modalAberto = evento;
-    this.renderer.setStyle(this.element.nativeElement.ownerDocument.body, 'overflow', 'hidden');
+    this.renderer.setStyle(
+      this.element.nativeElement.ownerDocument.body, 'overflow', 'hidden');
   }
 }
